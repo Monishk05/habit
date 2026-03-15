@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 500px; margin: auto; text-align: left;">
+    <h2>Edit Mission</h2>
+    <form method="POST">
+        <label>Mission Name:</label>
+        <input type="text" name="habit_name" value="{{ habit.name }}" required 
+               style="width: 100%; padding: 10px; margin: 15px 0; background: #0d1117; color: white; border: 1px solid #30363d;">
+        
+        <div style="display: flex; gap: 10px;">
+            <button type="submit" class="btn" style="flex: 1;">Save Changes</button>
+            <a href="/" class="btn" style="background: #30363d; text-decoration: none; text-align: center; flex: 1;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

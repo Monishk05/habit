@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Tracker</title>
+    <style>
+        body { background: #0d1117; color: white; font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .card { background: #161b22; border: 1px solid #30363d; padding: 20px; border-radius: 8px; display: inline-block; min-width: 300px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; background: #0d1117; color: white; border: 1px solid #30363d; }
+        .btn { background: #238636; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        nav { margin-bottom: 20px; }
+        nav a { color: #8b949e; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+    {% if current_user.is_authenticated %}
+        <a href="/">Dashboard</a> | 
+        <a href="/analytics">Analytics</a> |  <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a> | <a href="/register">Register</a>
+    {% endif %}
+</nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
